@@ -46,7 +46,7 @@
 }
 
 .h3__1 {
-  color: #fff;
+  /* color: #a6a7ec; */
   font-weight: lighter;
 }
 .h3__2 {
@@ -63,7 +63,7 @@
   font-size: 0.8rem;
 }
 .teardrop {
-    margin-left: 30px;
+  margin-left: 30px;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -76,15 +76,15 @@
   color: #fff;
 }
 .circle-wrapper {
-    display: flex;
+  display: flex;
 }
 .circle {
-    height: 28px;
-    width: 28px;
-    background: #fff;
-    color: #fff;
-    margin: 5px;
-    border-radius: 50% ;
+  height: 28px;
+  width: 28px;
+  background: #fff;
+  color: #fff;
+  margin: 5px;
+  border-radius: 50%;
 }
 
 .slider__wrapper {
@@ -134,4 +134,12 @@
 }
 .off-bg {
   background: #9a9be9;
+}
+@media only screen and (max-width: 768px) {
+  .large-img {
+    left: 20vw;
+  }
+  .slider__links {
+      left: 35vw;
+  }
 }
