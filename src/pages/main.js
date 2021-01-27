@@ -3,6 +3,9 @@ import shea from "../assets/shea.png";
 import enriched from "../assets/essentially-enriched.png";
 import aloe from "../assets/aloe-vera.png";
 import cocoa from "../assets/cocoa-butter.png";
+import creamy from "../assets/creamy.png";
+import dots from "../assets/dots.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Main() {
   const imgs = shea;
@@ -12,7 +15,7 @@ export default function Main() {
   const creams = { imgs, imge, imga, imgc };
   const [selected, setSelected] = useState(creams.imge);
 
-  const [bg, changeBGColor] = useState("#a6a7ec");
+  const [bg, changeBGColor] = useState("#A4ACDA");
   const [col, changeColor] = useState("#fff");
 
   return (
@@ -20,7 +23,9 @@ export default function Main() {
       <div className="wrapper">
         <div className="side-a">
           <h1 className="side-a__h1">NIVEA</h1>
-          <div className="dots-design"></div>
+          <div className="dots-d">
+            <img src={dots} className="dots" alt="dots"></img>
+          </div>
         </div>
         <div
           className="side-b"
@@ -28,6 +33,7 @@ export default function Main() {
             backgroundColor: bg,
           }}
         >
+                      <img src={creamy} alt="" className="creamy-img"></img>
           <div className="side-b__wrapper">
             <h3 className="side-b__heading">
               <span
@@ -51,7 +57,14 @@ export default function Main() {
           </div>
         </div>
         <div className="slider__wrapper">
-          <img src={selected} alt="" className="large-img"></img>
+        <AnimatePresence>
+          <motion.img src={selected} alt="" className="large-img" 
+              key={{ selected }}
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              />
+ </AnimatePresence>
           <div className="slider__links">
             <div className="link link__1">
               <img
@@ -60,7 +73,7 @@ export default function Main() {
                 className="white-bg link__thumb"
                 onClick={() => {
                   setSelected(creams.imge);
-                  changeBGColor("#a6a7ec");
+                  changeBGColor("#A4ACDA");
                   changeColor("#fff");
                 }}
               ></img>
@@ -73,8 +86,8 @@ export default function Main() {
                 className="off-bg link__thumb"
                 onClick={() => {
                   setSelected(creams.imgc);
-                  changeBGColor("#fff");
-                  changeColor("#a6a7ec");
+                  changeBGColor("#E5E5E5");
+                  changeColor("#A4ACDA");
                 }}
               ></img>
               <p className="white link__title">Cocoa</p>
@@ -86,7 +99,7 @@ export default function Main() {
                 className="white-bg link__thumb"
                 onClick={() => {
                   setSelected(creams.imgs);
-                  changeBGColor("#a6a7ec");
+                  changeBGColor("#A4ACDA");
                   changeColor("#fff");
                 }}
               ></img>
@@ -99,7 +112,7 @@ export default function Main() {
                 className="off-bg link__thumb"
                 onClick={() => {
                   setSelected(creams.imga);
-                  changeBGColor("#fff");
+                  changeBGColor("#E5E5E5");
                   changeColor("#a6a7ec");
                 }}
               ></img>

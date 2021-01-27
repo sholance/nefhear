@@ -10,12 +10,20 @@
 .side-a {
   width: 35vw;
   height: 100vh;
-  background: #00136f;
+  background: #00136F;
 }
 .side-a__h1 {
   font-size: 1.1rem;
   color: #fff;
   padding: 10px 7%;
+  cursor: pointer;
+
+}
+.dots {
+  position: absolute;
+  top: 29%;
+  height: 40vh;
+
 }
 .dots-design {
   position: absolute;
@@ -30,9 +38,15 @@
   background-size: 30px 30px;
 }
 .side-b {
-  background: #a6a7ec;
+  background: #A4ACDA;
   width: 65vw;
   height: 100vh;
+}
+.creamy-img {
+  position: absolute;
+  top: 4%;
+  left: 48%;
+  height: 95vh;
 }
 .side-b__wrapper {
   position: absolute;
@@ -124,6 +138,8 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+
 .link__title {
   font-size: 0.8rem;
   text-align: center;
@@ -141,5 +157,11 @@
   }
   .slider__links {
       left: 35vw;
+  }
+  .dots {
+    right: 65%;
+  }
+  .creamy {
+    width: 200px;
   }
 }
