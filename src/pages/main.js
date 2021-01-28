@@ -14,6 +14,13 @@ export default function Main() {
   const imgc = cocoa;
   const creams = { imgs, imge, imga, imgc };
   const [selected, setSelected] = useState(creams.imge);
+  // setTimeout(() => {
+  //   setSelected(true);
+  // }, 4000)
+  const backdrop = {
+    visible: {opacity: 1},
+    hidden: {opacity: 0}
+  }
 
   const [bg, changeBGColor] = useState("#A4ACDA");
   const [col, changeColor] = useState("#fff");
@@ -33,13 +40,13 @@ export default function Main() {
             backgroundColor: bg,
           }}
         >
-                      <img src={creamy} alt="" className="creamy-img"></img>
+          <img src={creamy} alt="" className="creamy-img"></img>
           <div className="side-b__wrapper">
             <h3 className="side-b__heading">
               <span
                 className="h3__1"
                 style={{
-                  color: col
+                  color: col,
                 }}
               >
                 SOFT
@@ -57,14 +64,17 @@ export default function Main() {
           </div>
         </div>
         <div className="slider__wrapper">
-        <AnimatePresence>
-          <motion.img src={selected} alt="" className="large-img" 
-              key={{ selected }}
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -300, opacity: 0 }}
-              />
- </AnimatePresence>
+          <AnimatePresence>
+            <motion.img
+              src={selected}
+              alt=""
+              className="large-img"
+              variants={backdrop}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay:0.5, type:"tween"}}
+                 />
+          </AnimatePresence>
           <div className="slider__links">
             <div className="link link__1">
               <img

@@ -161,7 +161,18 @@
   .dots {
     right: 65%;
   }
-  .creamy {
-    width: 200px;
+  .creamy-img {
+    height: 42%;
+    overflow-x: hidden;
+    top: 32%;
+  }
+  .h3__1{
+    font-size: 2rem;
+  }  
+  .h3__2{
+    font-size: 2rem;
+  }
+  .h3__3 {
+    font-size: 2rem;
   }
 }
