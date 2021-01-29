@@ -107,15 +107,27 @@
   height: 60vh;
   right: 35vw;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.large-img {
+
+img.large-img {
   object-fit: contain;
   width: 40vh;
   position: relative;
-  left: 60vw;
+  left: 20vw;
   top: 30%;
   -webkit-filter: drop-shadow(5px 5px 5px #666666);
   filter: drop-shadow(15px 0 1.2rem rgba(23, 20, 220, 0.5));
+  animation: pulse 1.5s ease;
+}
+@keyframes pulse {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 .slider__links {
   position: absolute;

@@ -17,14 +17,10 @@ export default function Main() {
   // setTimeout(() => {
   //   setSelected(true);
   // }, 4000)
-  const backdrop = {
-    visible: {opacity: 1},
-    hidden: {opacity: 0}
-  }
 
   const [bg, changeBGColor] = useState("#A4ACDA");
   const [col, changeColor] = useState("#fff");
-
+  
   return (
     <div className="container">
       <div className="wrapper">
@@ -64,17 +60,19 @@ export default function Main() {
           </div>
         </div>
         <div className="slider__wrapper">
+          <>
           <AnimatePresence>
             <motion.img
               src={selected}
               alt=""
               className="large-img"
-              variants={backdrop}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay:0.5, type:"tween"}}
-                 />
+              // key={selected}
+              // initial={{ opacity: 0, y: 200, x:-100 }}
+              // animate={{ opacity: 1, y: 0, x: 0 }}
+              // exit={{ opacity: 1 }}
+            />
           </AnimatePresence>
+          </>
           <div className="slider__links">
             <div className="link link__1">
               <img
